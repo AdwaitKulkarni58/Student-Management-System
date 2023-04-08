@@ -1,5 +1,10 @@
 package com.project.management.system.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "students")
 public class Student {
 
 	private Long id;
