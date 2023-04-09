@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +24,14 @@
 					<th>Actions</th>
 				</tr>
 			</thead>
+			<tbody>
+				<tr th:each="student: ${students}">
+					<td th:text="${student.firstName}"></td>
+					<td th:text="${student.lastName}"></td>
+					<td th:text="${student.email}"></td>
+					<td></td>
+				</tr>
+			</tbody>
 		</table>
 	</div>
 </body>
