@@ -1,6 +1,7 @@
 package com.project.management.system.rest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.project.management.system.service.StudentService;
@@ -16,9 +17,9 @@ public class StudentController {
 	}
 
 	@GetMapping("/students")
-	public String listStudents() {
-		studentService.getAllStudents();
-		return null;
+	public String listStudents(Model model) {
+		model.addAttribute("students", studentService.getAllStudents());
+		return "students";
 	}
 
 }
